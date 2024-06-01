@@ -1,33 +1,28 @@
 local function changeEquippedValue(newValue)
-    -- Get the player who executed the script
     local player = game.Players.LocalPlayer
     if not player then
         print("Local player not found.")
         return
     end
     
-    -- Access the player's Inventory
     local inventory = player:FindFirstChild("Inventory")
     if not inventory then
         print("Inventory folder not found for the local player.")
         return
     end
     
-    -- Access the Transportation folder
     local transportationFolder = inventory:FindFirstChild("Transportation")
     if not transportationFolder then
         print("Transportation folder not found.")
         return
     end
     
-    -- Access the Equipped value
     local equippedValue = transportationFolder:FindFirstChild("Equipped")
     if not equippedValue then
         print("Equipped value not found.")
         return
     end
     
-    -- Change the Equipped value
     equippedValue.Value = newValue
     
     print("Equipped value changed to " .. newValue .. " for the local player.")
